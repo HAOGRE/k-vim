@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'golang', 'php', 'ruby', 'shell', 'markdown', 'html', 'css', 'less', 'coffeescript', 'tmux', 'json', 'beta']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'surround']
 endif
 
 " ----------------------------------------------------------------------------
@@ -315,7 +315,8 @@ if has_key(g:plugs, 'syntastic')
     " let g:syntastic_html_checkers=['tidy', 'jshint']
     " npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config-standard
     " npm install -g eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
-    let g:syntastic_javascript_checkers = ['eslint']
+    " 注释掉eslint
+    " let g:syntastic_javascript_checkers = ['eslint']
 
     " to see error location list
     let g:syntastic_always_populate_loc_list = 1
@@ -376,8 +377,9 @@ if has_key(g:plugs, 'ale')
     " npm install -g eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
     let g:ale_linters = {
     \   'python': ['flake8'],
-    \   'javascript': ['eslint'],
     \}
+    " 注释掉eslint
+    " \   'javascript': ['eslint'],
 
     let g:ale_python_flake8_options="--ignore=E121,E123,E126,E226,E24,E704,W503 --max-line-length=120"
 
